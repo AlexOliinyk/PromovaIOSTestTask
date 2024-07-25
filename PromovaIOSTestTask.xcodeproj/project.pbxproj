@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		562814212C529D79000F7845 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 562814202C529D79000F7845 /* ComposableArchitecture */; };
+		562814242C52A305000F7845 /* AnimalFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562814232C52A305000F7845 /* AnimalFacts.swift */; };
+		562814262C52A3EE000F7845 /* ContentUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562814252C52A3EE000F7845 /* ContentUrl.swift */; };
+		562814282C52A69E000F7845 /* ApiClient+Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562814272C52A69E000F7845 /* ApiClient+Dependency.swift */; };
 		56C88EBC2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C88EBB2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift */; };
 		56C88EBE2C529BEA0016F836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C88EBD2C529BEA0016F836 /* ContentView.swift */; };
 		56C88EC02C529BED0016F836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C88EBF2C529BED0016F836 /* Assets.xcassets */; };
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		562814232C52A305000F7845 /* AnimalFacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFacts.swift; sourceTree = "<group>"; };
+		562814252C52A3EE000F7845 /* ContentUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUrl.swift; sourceTree = "<group>"; };
+		562814272C52A69E000F7845 /* ApiClient+Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiClient+Dependency.swift"; sourceTree = "<group>"; };
 		56C88EB82C529BEA0016F836 /* PromovaIOSTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PromovaIOSTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C88EBB2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaIOSTestTaskApp.swift; sourceTree = "<group>"; };
 		56C88EBD2C529BEA0016F836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				562814212C529D79000F7845 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +79,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		562814222C52A1FB000F7845 /* ContentService */ = {
+			isa = PBXGroup;
+			children = (
+				562814232C52A305000F7845 /* AnimalFacts.swift */,
+				562814252C52A3EE000F7845 /* ContentUrl.swift */,
+				562814272C52A69E000F7845 /* ApiClient+Dependency.swift */,
+			);
+			path = ContentService;
+			sourceTree = "<group>";
+		};
 		56C88EAF2C529BEA0016F836 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +112,7 @@
 		56C88EBA2C529BEA0016F836 /* PromovaIOSTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				562814222C52A1FB000F7845 /* ContentService */,
 				56C88EBB2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift */,
 				56C88EBD2C529BEA0016F836 /* ContentView.swift */,
 				56C88EBF2C529BED0016F836 /* Assets.xcassets */,
@@ -143,6 +162,9 @@
 			dependencies = (
 			);
 			name = PromovaIOSTestTask;
+			packageProductDependencies = (
+				562814202C529D79000F7845 /* ComposableArchitecture */,
+			);
 			productName = PromovaIOSTestTask;
 			productReference = 56C88EB82C529BEA0016F836 /* PromovaIOSTestTask.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +237,9 @@
 				Base,
 			);
 			mainGroup = 56C88EAF2C529BEA0016F836;
+			packageReferences = (
+				5628141F2C529D79000F7845 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 56C88EB92C529BEA0016F836 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,7 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				56C88EBE2C529BEA0016F836 /* ContentView.swift in Sources */,
+				562814262C52A3EE000F7845 /* ContentUrl.swift in Sources */,
 				56C88EBC2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift in Sources */,
+				562814242C52A305000F7845 /* AnimalFacts.swift in Sources */,
+				562814282C52A69E000F7845 /* ApiClient+Dependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +458,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +488,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +618,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5628141F2C529D79000F7845 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.12.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		562814202C529D79000F7845 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5628141F2C529D79000F7845 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 56C88EB02C529BEA0016F836 /* Project object */;
 }
