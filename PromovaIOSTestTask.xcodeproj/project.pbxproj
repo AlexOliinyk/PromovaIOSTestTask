@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		562814212C529D79000F7845 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 562814202C529D79000F7845 /* ComposableArchitecture */; };
 		562814242C52A305000F7845 /* AnimalFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562814232C52A305000F7845 /* AnimalFacts.swift */; };
 		562814262C52A3EE000F7845 /* ContentUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562814252C52A3EE000F7845 /* ContentUrl.swift */; };
 		562814282C52A69E000F7845 /* ApiClient+Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562814272C52A69E000F7845 /* ApiClient+Dependency.swift */; };
+		563D68F92C56E8DC00CF888F /* AnimalCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D68F82C56E8DC00CF888F /* AnimalCategories.swift */; };
+		563D68FC2C56ED3300CF888F /* AnimalCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D68FB2C56ED3300CF888F /* AnimalCategoriesView.swift */; };
+		563D68FF2C56F24F00CF888F /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D68FE2C56F24F00CF888F /* AdView.swift */; };
+		563D69022C5702B800CF888F /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D69012C5702B800CF888F /* ComingSoonView.swift */; };
+		563D69042C57081B00CF888F /* CategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D69032C57081B00CF888F /* CategoryCellView.swift */; };
+		563D69062C570AC600CF888F /* ImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D69052C570AC600CF888F /* ImagePlaceholder.swift */; };
+		563D69082C570F7C00CF888F /* AnimalFacts+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D69072C570F7C00CF888F /* AnimalFacts+Preview.swift */; };
+		563D690B2C57C17B00CF888F /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D690A2C57C17B00CF888F /* Color+hex.swift */; };
+		563D690D2C57F37800CF888F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 563D690C2C57F37800CF888F /* ComposableArchitecture */; };
 		56C88EBC2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C88EBB2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift */; };
 		56C88EBE2C529BEA0016F836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C88EBD2C529BEA0016F836 /* ContentView.swift */; };
 		56C88EC02C529BED0016F836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C88EBF2C529BED0016F836 /* Assets.xcassets */; };
@@ -41,6 +49,14 @@
 		562814232C52A305000F7845 /* AnimalFacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFacts.swift; sourceTree = "<group>"; };
 		562814252C52A3EE000F7845 /* ContentUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUrl.swift; sourceTree = "<group>"; };
 		562814272C52A69E000F7845 /* ApiClient+Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiClient+Dependency.swift"; sourceTree = "<group>"; };
+		563D68F82C56E8DC00CF888F /* AnimalCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCategories.swift; sourceTree = "<group>"; };
+		563D68FB2C56ED3300CF888F /* AnimalCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCategoriesView.swift; sourceTree = "<group>"; };
+		563D68FE2C56F24F00CF888F /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
+		563D69012C5702B800CF888F /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
+		563D69032C57081B00CF888F /* CategoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellView.swift; sourceTree = "<group>"; };
+		563D69052C570AC600CF888F /* ImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholder.swift; sourceTree = "<group>"; };
+		563D69072C570F7C00CF888F /* AnimalFacts+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalFacts+Preview.swift"; sourceTree = "<group>"; };
+		563D690A2C57C17B00CF888F /* Color+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hex.swift"; sourceTree = "<group>"; };
 		56C88EB82C529BEA0016F836 /* PromovaIOSTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PromovaIOSTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C88EBB2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaIOSTestTaskApp.swift; sourceTree = "<group>"; };
 		56C88EBD2C529BEA0016F836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				562814212C529D79000F7845 /* ComposableArchitecture in Frameworks */,
+				563D690D2C57F37800CF888F /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +101,54 @@
 				562814232C52A305000F7845 /* AnimalFacts.swift */,
 				562814252C52A3EE000F7845 /* ContentUrl.swift */,
 				562814272C52A69E000F7845 /* ApiClient+Dependency.swift */,
+				563D69072C570F7C00CF888F /* AnimalFacts+Preview.swift */,
 			);
 			path = ContentService;
+			sourceTree = "<group>";
+		};
+		563D68F72C56E8C200CF888F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				563D68FA2C56ED1000CF888F /* AnimalCategories */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		563D68FA2C56ED1000CF888F /* AnimalCategories */ = {
+			isa = PBXGroup;
+			children = (
+				563D69002C57025900CF888F /* CategoryCell */,
+				563D68FD2C56EF8800CF888F /* Ad */,
+				563D68F82C56E8DC00CF888F /* AnimalCategories.swift */,
+				563D68FB2C56ED3300CF888F /* AnimalCategoriesView.swift */,
+			);
+			path = AnimalCategories;
+			sourceTree = "<group>";
+		};
+		563D68FD2C56EF8800CF888F /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				563D68FE2C56F24F00CF888F /* AdView.swift */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
+		563D69002C57025900CF888F /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				563D69012C5702B800CF888F /* ComingSoonView.swift */,
+				563D69032C57081B00CF888F /* CategoryCellView.swift */,
+				563D69052C570AC600CF888F /* ImagePlaceholder.swift */,
+			);
+			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		563D69092C57C15000CF888F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				563D690A2C57C17B00CF888F /* Color+hex.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		56C88EAF2C529BEA0016F836 = {
@@ -112,6 +174,8 @@
 		56C88EBA2C529BEA0016F836 /* PromovaIOSTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				563D69092C57C15000CF888F /* Helpers */,
+				563D68F72C56E8C200CF888F /* Features */,
 				562814222C52A1FB000F7845 /* ContentService */,
 				56C88EBB2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift */,
 				56C88EBD2C529BEA0016F836 /* ContentView.swift */,
@@ -163,7 +227,7 @@
 			);
 			name = PromovaIOSTestTask;
 			packageProductDependencies = (
-				562814202C529D79000F7845 /* ComposableArchitecture */,
+				563D690C2C57F37800CF888F /* ComposableArchitecture */,
 			);
 			productName = PromovaIOSTestTask;
 			productReference = 56C88EB82C529BEA0016F836 /* PromovaIOSTestTask.app */;
@@ -282,11 +346,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				563D68FC2C56ED3300CF888F /* AnimalCategoriesView.swift in Sources */,
+				563D69062C570AC600CF888F /* ImagePlaceholder.swift in Sources */,
+				563D69022C5702B800CF888F /* ComingSoonView.swift in Sources */,
 				56C88EBE2C529BEA0016F836 /* ContentView.swift in Sources */,
+				563D69082C570F7C00CF888F /* AnimalFacts+Preview.swift in Sources */,
+				563D690B2C57C17B00CF888F /* Color+hex.swift in Sources */,
+				563D68F92C56E8DC00CF888F /* AnimalCategories.swift in Sources */,
 				562814262C52A3EE000F7845 /* ContentUrl.swift in Sources */,
 				56C88EBC2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift in Sources */,
+				563D69042C57081B00CF888F /* CategoryCellView.swift in Sources */,
 				562814242C52A305000F7845 /* AnimalFacts.swift in Sources */,
 				562814282C52A69E000F7845 /* ApiClient+Dependency.swift in Sources */,
+				563D68FF2C56F24F00CF888F /* AdView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +703,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		562814202C529D79000F7845 /* ComposableArchitecture */ = {
+		563D690C2C57F37800CF888F /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5628141F2C529D79000F7845 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;

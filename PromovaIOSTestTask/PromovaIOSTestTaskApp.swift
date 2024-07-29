@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct PromovaIOSTestTaskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AnimalCategoriesView(store: Store(initialState: AnimalCategories.State(), reducer: { AnimalCategories() }))
         }
     }
 }
