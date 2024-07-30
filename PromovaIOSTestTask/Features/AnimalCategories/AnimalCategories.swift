@@ -9,8 +9,8 @@ import Foundation
 import ComposableArchitecture
 import SwiftUI
 
-//@Reducer
-struct AnimalCategories: Reducer {
+@Reducer
+struct AnimalCategories {
     
     @ObservableState
     struct State {
@@ -18,7 +18,8 @@ struct AnimalCategories: Reducer {
         var categories: IdentifiedArrayOf<AnimalFact> = []
         var isLoading: Bool = false
         var adShowed: Bool = false
-        var alert: AlertState<Action>?
+        var selectedCategory: AnimalInfo.State?
+        @Presents var alert: AlertState<Action.Alert>?
     }
     
     enum Action {
@@ -30,7 +31,14 @@ struct AnimalCategories: Reducer {
         case watchAdTapped(UUID)
         case adDismissed(UUID)
         case adWatched
-        case alertDismissed
+        case alert(PresentationAction<Alert>)
+        case info(AnimalInfo.Action)
+        
+        enum Alert {
+            case alertDismissed
+            case watchAdTapped(UUID)
+            case fetchAnimals
+        }
     }
     
     @Dependency(\.apiClient) var apiClient: ApiClient
@@ -127,10 +135,37 @@ struct AnimalCategories: Reducer {
             case .adWatched:
                 return .none
                 
-            case .alertDismissed:
-                state.alert = nil
+            case let .alert(alertActions):
+                switch alertActions {
+                    
+                case .dismiss:
+                    return .none
+                case .presented(.alertDismissed):
+                    
+                    state.alert = nil
+                    return .none
+                    
+                case .presented(.fetchAnimals):
+                    
+                    state.isLoading = true
+                    return .run { send in
+                        await send(.categoriesResponse(TaskResult { try await apiClient.fetchAnimals() }))
+                    }
+                    
+                case let .presented(.watchAdTapped(categoryId)):
+                    state.adShowed = true
+                    return .run { send in
+                        try? await Task.sleep(nanoseconds: 2_000_000_000)
+                        await send(.adDismissed(categoryId))
+                    }
+                }
+            case .info(_):
                 return .none
             }
+        }
+        .ifLet(\.$alert, action: \.alert)
+        .ifLet(\.selectedCategory, action: \.info) {
+            AnimalInfo()
         }
     }
 }

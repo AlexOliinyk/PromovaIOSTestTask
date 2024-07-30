@@ -10,29 +10,29 @@ import SwiftUI
 
 struct AnimalCategoriesView: View {
     
-    let store: StoreOf<AnimalCategories>
+    @Perception.Bindable var store: StoreOf<AnimalCategories>
     
     var body: some View {
-        ZStack {
-            Constants.backgroundColor
-                .ignoresSafeArea(.all, edges: .all)
             content()
-        }
     }
     
     private func content() -> some View {
         WithPerceptionTracking {
-            ZStack {
-                rowsContent()
-                
-                if store.state.isLoading {
-                    ProgressView()
-                        .scaleEffect(2.0)
+            NavigationStack {
+                ZStack {
+                    rowsContent()
+                    
+                    if store.state.isLoading {
+                        ProgressView()
+                            .scaleEffect(2.0)
+                    }
                 }
+                .background(Constants.backgroundColor)
+                .onAppear(perform: {
+                    store.send(.fetchAnimals)
+                })
+                .alert($store.scope(state: \.alert, action: \.alert))
             }
-            .onAppear(perform: {
-                store.send(.fetchAnimals)
-            })
         }
     }
     
@@ -50,8 +50,17 @@ struct AnimalCategoriesView: View {
     }
     
     private func categoryRow(with category: AnimalFact) -> some View {
-        CategoryCellView(animalFact: category)
+//        NavigationLink {
+//            IfLetStore(self.store.scope(
+//                state: \.selectedCategory,
+//                action: \.info)) { infoStore in
+//                AnimalInfoView(store: infoStore)
+//            }
+//        } label: {
+//            <#code#>
+//        }
 
+            CategoryCellView(animalFact: category)
     }
 }
 

@@ -19,6 +19,10 @@
 		563D69082C570F7C00CF888F /* AnimalFacts+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D69072C570F7C00CF888F /* AnimalFacts+Preview.swift */; };
 		563D690B2C57C17B00CF888F /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D690A2C57C17B00CF888F /* Color+hex.swift */; };
 		563D690D2C57F37800CF888F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 563D690C2C57F37800CF888F /* ComposableArchitecture */; };
+		563D69102C583F3000CF888F /* AnimalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D690F2C583F2F00CF888F /* AnimalInfo.swift */; };
+		563D69132C5840AB00CF888F /* AnimalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D69122C5840AB00CF888F /* AnimalInfoCell.swift */; };
+		563D69152C58447500CF888F /* AnimalInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D69142C58447500CF888F /* AnimalInfoCellView.swift */; };
+		563D69172C58597700CF888F /* AnimalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D69162C58597700CF888F /* AnimalInfoView.swift */; };
 		56C88EBC2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C88EBB2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift */; };
 		56C88EBE2C529BEA0016F836 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C88EBD2C529BEA0016F836 /* ContentView.swift */; };
 		56C88EC02C529BED0016F836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C88EBF2C529BED0016F836 /* Assets.xcassets */; };
@@ -57,6 +61,10 @@
 		563D69052C570AC600CF888F /* ImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholder.swift; sourceTree = "<group>"; };
 		563D69072C570F7C00CF888F /* AnimalFacts+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalFacts+Preview.swift"; sourceTree = "<group>"; };
 		563D690A2C57C17B00CF888F /* Color+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hex.swift"; sourceTree = "<group>"; };
+		563D690F2C583F2F00CF888F /* AnimalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalInfo.swift; sourceTree = "<group>"; };
+		563D69122C5840AB00CF888F /* AnimalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalInfoCell.swift; sourceTree = "<group>"; };
+		563D69142C58447500CF888F /* AnimalInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalInfoCellView.swift; sourceTree = "<group>"; };
+		563D69162C58597700CF888F /* AnimalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalInfoView.swift; sourceTree = "<group>"; };
 		56C88EB82C529BEA0016F836 /* PromovaIOSTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PromovaIOSTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C88EBB2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaIOSTestTaskApp.swift; sourceTree = "<group>"; };
 		56C88EBD2C529BEA0016F836 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +117,7 @@
 		563D68F72C56E8C200CF888F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				563D690E2C583EED00CF888F /* AnimalInfo */,
 				563D68FA2C56ED1000CF888F /* AnimalCategories */,
 			);
 			path = Features;
@@ -149,6 +158,25 @@
 				563D690A2C57C17B00CF888F /* Color+hex.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		563D690E2C583EED00CF888F /* AnimalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				563D69112C58406F00CF888F /* AnimalInfoCell */,
+				563D690F2C583F2F00CF888F /* AnimalInfo.swift */,
+				563D69162C58597700CF888F /* AnimalInfoView.swift */,
+			);
+			path = AnimalInfo;
+			sourceTree = "<group>";
+		};
+		563D69112C58406F00CF888F /* AnimalInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				563D69122C5840AB00CF888F /* AnimalInfoCell.swift */,
+				563D69142C58447500CF888F /* AnimalInfoCellView.swift */,
+			);
+			path = AnimalInfoCell;
 			sourceTree = "<group>";
 		};
 		56C88EAF2C529BEA0016F836 = {
@@ -353,12 +381,16 @@
 				563D69082C570F7C00CF888F /* AnimalFacts+Preview.swift in Sources */,
 				563D690B2C57C17B00CF888F /* Color+hex.swift in Sources */,
 				563D68F92C56E8DC00CF888F /* AnimalCategories.swift in Sources */,
+				563D69102C583F3000CF888F /* AnimalInfo.swift in Sources */,
+				563D69152C58447500CF888F /* AnimalInfoCellView.swift in Sources */,
 				562814262C52A3EE000F7845 /* ContentUrl.swift in Sources */,
 				56C88EBC2C529BEA0016F836 /* PromovaIOSTestTaskApp.swift in Sources */,
 				563D69042C57081B00CF888F /* CategoryCellView.swift in Sources */,
 				562814242C52A305000F7845 /* AnimalFacts.swift in Sources */,
+				563D69172C58597700CF888F /* AnimalInfoView.swift in Sources */,
 				562814282C52A69E000F7845 /* ApiClient+Dependency.swift in Sources */,
 				563D68FF2C56F24F00CF888F /* AdView.swift in Sources */,
+				563D69132C5840AB00CF888F /* AnimalInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
