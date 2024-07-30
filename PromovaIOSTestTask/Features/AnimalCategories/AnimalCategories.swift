@@ -18,7 +18,7 @@ struct AnimalCategories {
         var categories: IdentifiedArrayOf<AnimalFact> = []
         var isLoading: Bool = false
         var adShowed: Bool = false
-        var selectedCategory: AnimalInfo.State?
+        var selectedCategory = StackState<Info.State>()
         @Presents var alert: AlertState<Action.Alert>?
     }
     
@@ -32,13 +32,18 @@ struct AnimalCategories {
         case adDismissed(UUID)
         case adWatched
         case alert(PresentationAction<Alert>)
-        case info(AnimalInfo.Action)
+        case info(StackActionOf<Info>)
         
         enum Alert {
             case alertDismissed
             case watchAdTapped(UUID)
             case fetchAnimals
         }
+    }
+    
+    @Reducer
+    enum Info {
+        case animalInfo(AnimalInfo)
     }
     
     @Dependency(\.apiClient) var apiClient: ApiClient
@@ -118,7 +123,9 @@ struct AnimalCategories {
                     return .none
                 }
                 
-            case .navigationSelectionSet(_):
+            case let .navigationSelectionSet(id):
+                guard let category = state.categories.first(where: { $0.id == id }) else { return .none }
+                state.selectedCategory.append(.animalInfo(AnimalInfo.State(animalFact: category)))
                 return .none
             case let .watchAdTapped(categoryId):
                 
@@ -130,7 +137,10 @@ struct AnimalCategories {
                 
             case let .adDismissed(categoryId):
                 state.adShowed = false
-                return .none
+                return .run { send in
+                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    await send(.navigationSelectionSet(categoryId))
+                }
                 
             case .adWatched:
                 return .none
@@ -164,8 +174,6 @@ struct AnimalCategories {
             }
         }
         .ifLet(\.$alert, action: \.alert)
-        .ifLet(\.selectedCategory, action: \.info) {
-            AnimalInfo()
-        }
+        .forEach(\.selectedCategory, action: \.info)
     }
 }

@@ -18,49 +18,43 @@ struct AnimalCategoriesView: View {
     
     private func content() -> some View {
         WithPerceptionTracking {
-            NavigationStack {
-                ZStack {
-                    rowsContent()
-                    
-                    if store.state.isLoading {
-                        ProgressView()
-                            .scaleEffect(2.0)
+            NavigationStack(
+                path: $store.scope(
+                    state: \.selectedCategory,
+                    action: \.info))
+            {
+                ScrollView(.vertical) {
+                    VStack(spacing: 16) {
+                        ForEach(store.categories) { category in
+                            Button {
+                                store.send(.categorieTapped(category.id))
+                            } label: {
+                                    CategoryCellView(animalFact: category)
+                            }
+                        }
                     }
+                    .padding()
                 }
                 .background(Constants.backgroundColor)
                 .onAppear(perform: {
                     store.send(.fetchAnimals)
                 })
+                .overlay(content: {
+                    if store.isLoading {
+                        ProgressView()
+                    }
+                })
                 .alert($store.scope(state: \.alert, action: \.alert))
-            }
-        }
-    }
-    
-    private func rowsContent() -> some View {
-        ScrollView(.vertical) {
-            VStack(spacing: 16) {
-                ForEach(store.categories) { category in
-                    categoryRow(with: category)
+                .navigationTitle("Animal facts")
+                .navigationBarTitleDisplayMode(.inline)
+                
+            } destination: { (store) in
+                switch store.case {
+                case let .animalInfo(infoStore):
+                    AnimalInfoView(store: infoStore)
                 }
             }
-            .padding()
         }
-        .navigationTitle("Animal facts")
-        .navigationBarTitleDisplayMode(.inline)
-    }
-    
-    private func categoryRow(with category: AnimalFact) -> some View {
-//        NavigationLink {
-//            IfLetStore(self.store.scope(
-//                state: \.selectedCategory,
-//                action: \.info)) { infoStore in
-//                AnimalInfoView(store: infoStore)
-//            }
-//        } label: {
-//            <#code#>
-//        }
-
-            CategoryCellView(animalFact: category)
     }
 }
 

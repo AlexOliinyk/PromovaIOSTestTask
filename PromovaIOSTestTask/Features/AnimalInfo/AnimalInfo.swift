@@ -60,11 +60,12 @@ struct AnimalInfo {
                     return .send(.goToNext, animation: .interactiveSpring)
                 }
             case .goToNext:
-//                let currentItem = state.selectedItem
-                state.selectedItem += 1
+                let currentItem = state.selectedItem
+                state.selectedItem = currentItem + 1
                 return .none
             case .goToPrevious:
-                state.selectedItem -= 1
+                let currentItem = state.selectedItem
+                state.selectedItem = currentItem - 1
                 return .none
             }
         }
