@@ -45,13 +45,14 @@ struct AnimalCategoriesView: View {
                     }
                 }
                 .alert($store.scope(state: \.alert, action: \.alert))
-                .navigationTitle("Animal facts")
-                .navigationBarTitleDisplayMode(.inline)
                 
             } destination: { (store) in
                 switch store.case {
                 case let .animalInfo(infoStore):
                     AnimalInfoView(store: infoStore)
+                        .navigationTitle("Animal facts")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbarRole(.editor)
                 }
             }
         }

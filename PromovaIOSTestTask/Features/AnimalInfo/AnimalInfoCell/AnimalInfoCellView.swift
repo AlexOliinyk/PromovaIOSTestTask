@@ -27,6 +27,7 @@ struct AnimalInfoCellView: View {
                 }
                 .background(.white)
                 .cornerRadius(10.0)
+                .shadow(color: .gray, radius: 30.0)
             }
         }
     }

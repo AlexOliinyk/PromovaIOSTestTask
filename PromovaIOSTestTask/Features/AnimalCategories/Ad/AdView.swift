@@ -10,7 +10,7 @@ import SwiftUI
 struct AdView: View {
     var body: some View {
         ZStack {
-            Color.white
+            Constants.backgroundColor
                 .opacity(Constants.backgroundOpacity)
                 .ignoresSafeArea()
             ProgressView()
@@ -25,6 +25,7 @@ extension AdView {
     struct Constants {
         static let backgroundOpacity: CGFloat = 0.5
         static let loaderScale: CGFloat = 2.0
+        static let backgroundColor = Color(hex: "#BEC8FF")
     }
 }
 
