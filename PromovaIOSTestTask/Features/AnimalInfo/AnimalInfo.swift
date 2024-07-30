@@ -21,6 +21,7 @@ struct AnimalInfo {
         init(animalFact: AnimalFact) {
             self.id = animalFact.id
             self.title = animalFact.title
+            self.selectedItem = animalFact.content.startIndex
             
             let content = animalFact.content.enumerated().map { index, fact in
                 AnimalInfoCell.State(
@@ -32,7 +33,6 @@ struct AnimalInfo {
             }
             
             self.facts = IdentifiedArray(uniqueElements: content)
-            selectedItem = .zero
         }
         
     }
@@ -51,7 +51,7 @@ struct AnimalInfo {
             case let .infoTabChanged(itemId):
                 state.selectedItem = itemId
                 return .none
-            case .info(_, action: let action):
+            case .info(index: let index, action: let action):
                 switch action {
                     
                 case .previousButtonTapped(_):
@@ -60,13 +60,11 @@ struct AnimalInfo {
                     return .send(.goToNext, animation: .interactiveSpring)
                 }
             case .goToNext:
-                let currentItem = state.selectedItem
-                state.selectedItem = currentItem + 1
-                return .none
+                state.selectedItem += 1
+                return .send(.infoTabChanged(state.selectedItem))
             case .goToPrevious:
-                let currentItem = state.selectedItem
-                state.selectedItem = currentItem - 1
-                return .none
+                state.selectedItem -= 1
+                return .send(.infoTabChanged(state.selectedItem))
             }
         }
     }

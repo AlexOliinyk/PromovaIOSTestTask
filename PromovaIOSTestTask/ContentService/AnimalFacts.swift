@@ -20,7 +20,7 @@ struct AnimalFact: Codable, Identifiable {
 }
 
 // MARK: - Content
-struct Content: Codable {
+struct Content: Codable, Identifiable {
     let fact: String
     let image: String
     let id: UUID

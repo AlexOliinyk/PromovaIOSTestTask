@@ -18,14 +18,21 @@ struct AnimalInfoView: View {
                 AnimalCategoriesView.Constants.backgroundColor
                     .ignoresSafeArea(.all, edges: .all)
                 
-                ForEachStore(self.store.scope(
-                    state: \.facts,
-                    action: AnimalInfo.Action.info)
-                ) { store in
-                    AnimalInfoCellView(store: store)
-                        .padding(.top, 50)
-                        .padding(.horizontal, 22)
-                        .padding(.bottom, 50)
+                VStack {
+                    PageView(
+                        pageCount: store.facts.count,
+                        currentIndex: $store.selectedItem.sending(\.infoTabChanged)
+                    ) {
+                        ForEachStore(self.store.scope(
+                            state: \.facts,
+                            action: AnimalInfo.Action.info)
+                        ) { infoCellStore in
+                            AnimalInfoCellView(store: infoCellStore)
+                                .padding(.top, 50)
+                                .padding(.horizontal, 22)
+                                .padding(.bottom, 50)
+                        }
+                    }
                 }
             }
         }

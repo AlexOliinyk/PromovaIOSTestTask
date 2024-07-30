@@ -39,11 +39,6 @@ struct AnimalCategoriesView: View {
                 .onAppear(perform: {
                     store.send(.fetchAnimals)
                 })
-                .overlay(content: {
-                    if store.isLoading {
-                        ProgressView()
-                    }
-                })
                 .alert($store.scope(state: \.alert, action: \.alert))
                 .navigationTitle("Animal facts")
                 .navigationBarTitleDisplayMode(.inline)
