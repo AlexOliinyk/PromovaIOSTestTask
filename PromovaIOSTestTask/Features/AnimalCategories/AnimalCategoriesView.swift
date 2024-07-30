@@ -13,10 +13,10 @@ struct AnimalCategoriesView: View {
     @Perception.Bindable var store: StoreOf<AnimalCategories>
     
     var body: some View {
-            content()
+        categories()
     }
     
-    private func content() -> some View {
+    private func categories() -> some View {
         WithPerceptionTracking {
             NavigationStack(
                 path: $store.scope(
@@ -39,6 +39,11 @@ struct AnimalCategoriesView: View {
                 .onAppear(perform: {
                     store.send(.fetchAnimals)
                 })
+                .overlay {
+                    if store.adShowed {
+                        AdView()
+                    }
+                }
                 .alert($store.scope(state: \.alert, action: \.alert))
                 .navigationTitle("Animal facts")
                 .navigationBarTitleDisplayMode(.inline)

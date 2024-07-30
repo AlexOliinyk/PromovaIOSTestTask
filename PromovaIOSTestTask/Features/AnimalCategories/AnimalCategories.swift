@@ -138,7 +138,6 @@ struct AnimalCategories {
             case let .adDismissed(categoryId):
                 state.adShowed = false
                 return .run { send in
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
                     await send(.navigationSelectionSet(categoryId))
                 }
                 
