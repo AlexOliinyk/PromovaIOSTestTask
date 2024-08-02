@@ -51,7 +51,7 @@ struct AnimalInfo {
             case let .infoTabChanged(itemId):
                 state.selectedItem = itemId
                 return .none
-            case .info(index: let index, action: let action):
+            case .info(index: _, action: let action):
                 switch action {
                     
                 case .previousButtonTapped(_):

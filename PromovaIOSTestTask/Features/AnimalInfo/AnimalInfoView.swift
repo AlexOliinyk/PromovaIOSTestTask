@@ -27,14 +27,28 @@ struct AnimalInfoView: View {
                             state: \.facts,
                             action: AnimalInfo.Action.info)
                         ) { infoCellStore in
-                            AnimalInfoCellView(store: infoCellStore)
-                                .padding(.top, 50)
-                                .padding(.horizontal, 22)
+                            VStack {
+                                AnimalInfoCellView(store: infoCellStore)
+                                    .padding(.top, 50)
+                                    .padding(.horizontal, 22)
                                 .padding(.bottom, 50)
+                                
+                                Spacer()
+                                
+                                shareButton(image: infoCellStore.imageLink, description: infoCellStore.description)
+                            }
                         }
                     }
                 }
             }
+        }
+    }
+    
+    private func shareButton(image: String, description: String) -> some View {
+        ShareLink(item: URL(string: image)!, message: Text(description)) {
+            Image(systemName: "square.and.arrow.up.circle")
+                .foregroundStyle(.black)
+                .font(.system(size: 50))
         }
     }
 }
